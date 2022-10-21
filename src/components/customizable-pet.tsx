@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { TextInput, View, Text, Button, Alert } from 'react-native';
+import { TextInput, View, Text, Alert, TouchableOpacity } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { useAppNavigation } from '../navigation';
 import { Pet } from './pet';
@@ -200,6 +200,12 @@ export function CustomizablePetComponent(p: { type: "Add" | "Edit", pet?: Pet })
             name="status"
         />
         <View style={{ marginBottom: 20 }}></View>
-        <Button title={`${p.type === "Add" ? "Add" : "Save"} pet`} onPress={handleSubmit(onSubmit)} />
+        <TouchableOpacity style={{
+            width: 200, height: 40, borderRadius: 8, marginTop: 24, backgroundColor: "#0096FF",
+            alignItems: "center", justifyContent: "center"
+        }}>
+            <Text style={{ color: "white" }}>{p.type === "Add" ? "Add" : "Save"} pet</Text>
+        </TouchableOpacity>
+
     </View>
 }
