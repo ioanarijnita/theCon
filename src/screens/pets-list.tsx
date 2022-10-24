@@ -19,7 +19,6 @@ export function PetsList() {
     const filterByStatus = () => {
         let result = pets;
         if (selectedStatuses.length) {
-            console.log(123131)
             result = pets.filter(pet => selectedStatuses.includes(pet.status));
         }
         setFilteredPets([...result])
@@ -36,7 +35,7 @@ export function PetsList() {
     }
 
     const fetchPets = () => {
-        fetch('https://petstore.swagger.io/v2/pet/findByStatus?status=sold', {
+        fetch('https://petstore.swagger.io/v2/pet/findByStatus?status=available&status=pending&status=sold', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'

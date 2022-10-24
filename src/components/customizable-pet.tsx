@@ -200,7 +200,7 @@ export function CustomizablePetComponent(p: { type: "Add" | "Edit", pet?: Pet })
             name="status"
         />
         <View style={{ marginBottom: 20 }}></View>
-        <TouchableOpacity style={{
+        <TouchableOpacity onPress={handleSubmit(onSubmit)} style={{
             width: 200, height: 40, borderRadius: 8, marginTop: 24, backgroundColor: "#0096FF",
             alignItems: "center", justifyContent: "center"
         }}>
